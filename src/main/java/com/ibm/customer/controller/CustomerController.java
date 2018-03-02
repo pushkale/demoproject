@@ -15,7 +15,6 @@ import com.ibm.customer.repository.CustomerRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-
 @RestController
 @Api("customer")
 @RequestMapping("/api/customer")
