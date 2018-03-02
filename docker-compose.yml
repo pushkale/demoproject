@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  demoapp:
+    build: .
+    # image: registry.gitlab.com/idgst/springboot-mongo-demo:latest
+    restart: always
+    container_name: demoapp1
+    ports:
+      - 8182:8090
+    working_dir: /
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo
+    container_name: mdb
+    ports:  # for demo/debug purpose only
+      - 27018:27017
+    volumes:
+      - $HOME/data/demoapp-mongo-data:/data/db
+      - $HOME/data/demoapp-mongo-bkp:/data/bkp
+    restart: always
