@@ -19,8 +19,8 @@ public class CustomerModel {
 	@ApiModelProperty(notes = "Age of customer")
     private int age;
 	
-	public CustomerModel(String id, String fname, String lname, int age) {
-		super();
+	public CustomerModel(int age, String fname, String id, String lname) {
+		
 		this.id = id;
 		this.firstName = fname;
 		this.lastName = lname;
