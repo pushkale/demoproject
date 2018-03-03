@@ -15,11 +15,11 @@ import com.ibm.customer.repository.CustomerRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-
 @RestController
 @Api("customer")
 @RequestMapping("/api/customer")
 public class CustomerController  {
+	
 
 	/*@RequestMapping(method = RequestMethod.GET, value = "/api/getCustomer")
 	public String getCustomer() {
