@@ -4,7 +4,6 @@ metadata:
 - name: demoproject
   namespace: demoproject_ns
 spec: 
-  replicas: 1
   containers: 
   - name: demoproject
     image: registry.ng.bluemix.net/demoproject_ns/demoproject
