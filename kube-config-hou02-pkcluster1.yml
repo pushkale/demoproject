@@ -9,7 +9,7 @@ contexts:
   context:
     cluster: pkcluster1
     user: pushkale@in.ibm.com
-    namespace: demoproject_ns
+    namespace: default
 current-context: pkcluster1
 kind: Config
 users:
@@ -29,9 +29,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoproject
-  namespace: demoproject_ns
+  namespace: default
   clusterName: pkcluster1
-  selfLink: /apis/extensions/v1beta1/demoproject_ns/default/deployments/demoproject
+  selfLink: /apis/extensions/v1beta1/default/default/deployments/demoproject
   uid: f80d08c1-1f98-11e8-8607-7e169d5cae9a
 spec:
   containers:
