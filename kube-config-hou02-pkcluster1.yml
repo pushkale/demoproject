@@ -27,7 +27,7 @@ users:
 ---------
 apiVersion: extensions/v1beta1
 kind: Deployment
-metadata: {
+metadata:
     name: demoproject
     namespace: default
     selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/demoproject
@@ -35,75 +35,62 @@ metadata: {
     resourceVersion: 1567
     generation: 1
     creationTimestamp: 2018-03-04T10:44:09Z
-    labels: {
+    labels: 
       run: demoproject
-    }
-    annotations: {
+    annotations: 
       deployment.kubernetes.io/revision: 1
-    }
-}
-spec: {
+
+spec: 
     replicas: 1
-    selector: {
-      matchLabels: {
+    selector: 
+      matchLabels: 
         run: demoproject
-      }
-    }
-    template: {
-      metadata: {
+    
+    template: 
+      metadata: 
         creationTimestamp: null
-        labels: {
+        labels: 
           run: demoproject
-        }
-      }
-      spec: {
-        containers: [
-          {
+      
+      spec: 
+        containers:           
             name: demoproject
             image: registry.ng.bluemix.net/demoproject_ns/demoproject
-            resources: {}
+            resources: 
             terminationMessagePath: /dev/termination-log
             terminationMessagePolicy: File
             imagePullPolicy: Always
-          }
-        ]
+        
         restartPolicy: Always
         terminationGracePeriodSeconds: 30
         dnsPolicy: ClusterFirst
-        securityContext: {}
+        securityContext: 
         schedulerName: default-scheduler
-      }
-    }
-    strategy: {
+    
+    strategy: 
       type: RollingUpdate
-      rollingUpdate: {
+      rollingUpdate: 
         maxUnavailable: 1
         maxSurge: 1
-      }
-    }
-}
-status: {
+
+status: 
     observedGeneration: 1
     replicas: 1
     updatedReplicas: 1
     readyReplicas: 1
     availableReplicas: 1
-    conditions: [
-      {
+    conditions:       
         type: Available
         status: True
         lastUpdateTime: 2018-03-04T10:44:09Z
         lastTransitionTime: 2018-03-04T10:44:09Z
         reason: MinimumReplicasAvailable
         message: Deployment has minimum availability.
-      }
-    ]
-}
 
 ----------------
 apiVersion: extensions/v1beta1
 kind: Pod
-metadata: {
+metadata: 
     name: demoproject-7fc59b8b54-78zn7
     generateName: demoproject-7fc59b8b54-
     namespace: default
@@ -111,122 +98,89 @@ metadata: {
     uid: f80e8efa-1f98-11e8-8607-7e169d5cae9a
     resourceVersion: 1565
     creationTimestamp: 2018-03-04T10:44:09Z
-    labels: {
+    labels: 
       pod-template-hash: 3971564610
       run: demoproject
-    }
-    ownerReferences: [
-      {
+    
+    ownerReferences:       
         apiVersion: extensions/v1beta1
         kind: ReplicaSet
         name: demoproject-7fc59b8b54
         uid: f80ddb27-1f98-11e8-8607-7e169d5cae9a
         controller: true
         blockOwnerDeletion: true
-      }
-    ]
-}
-spec: {
-    volumes: [
-      {
+spec: 
+    volumes:
         name: default-token-gtph6
-        secret: {
+        secret: 
           secretName: default-token-gtph6
           defaultMode: 420
-        }
-      }
-    ]
-    containers: [
-      {
+
+    containers:      
         name: demoproject
         image: registry.ng.bluemix.net/demoproject_ns/demoproject
-        resources: {}
-        volumeMounts: [
-          {
+        resources: 
+        volumeMounts:           
             name: default-token-gtph6
             readOnly: true
             mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-          }
-        ]
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         imagePullPolicy: Always
-      }
-    ]
+    
     restartPolicy: Always
     terminationGracePeriodSeconds: 30
     dnsPolicy: ClusterFirst
     serviceAccountName: default
     serviceAccount: default
     nodeName: 10.47.64.15
-    securityContext: {}
-    imagePullSecrets: [
-      {
+    securityContext: 
+    imagePullSecrets:
         name: bluemix-default-secret
-      }
-      {
         name: bluemix-default-secret-regional
-      }
-      {
         name: bluemix-default-secret-international
-      }
-    ]
     schedulerName: default-scheduler
-    tolerations: [
-      {
+    tolerations:      
         key: node.kubernetes.io/not-ready
         operator: Exists
         effect: NoExecute
         tolerationSeconds: 300
-      }
-      {
         key: node.kubernetes.io/unreachable
         operator: Exists
         effect: NoExecute
         tolerationSeconds: 300
-      }
-    ]
-}
-status: {
+
+status: 
     phase: Running
-    conditions: [
-      {
+    conditions: 
         type: Initialized
         status: True
         lastProbeTime: null
         lastTransitionTime: 2018-03-04T10:44:09Z
-      }
-      {
+
         type: Ready
         status: True
         lastProbeTime: null
         lastTransitionTime: 2018-03-04T10:44:25Z
-      }
-      {
+
         type: PodScheduled
         status: True
         lastProbeTime: null
         lastTransitionTime: 2018-03-04T10:44:09Z
-      }
-    ]
+      
     hostIP: 10.47.64.15
     podIP: 172.30.246.204
     startTime: 2018-03-04T10:44:09Z
-    containerStatuses: [
-      {
+    containerStatuses:       
         name: demoproject
-        state: {
-          running: {
+        state: 
+          running: 
             startedAt: 2018-03-04T10:44:25Z
-          }
-        }
-        lastState: {}
+
+        lastState: 
         ready: true
         restartCount: 0
         image: registry.ng.bluemix.net/demoproject_ns/demoproject:latest
         imageID: docker-pullable://registry.ng.bluemix.net/demoproject_ns/demoproject@sha256:44dc0bd28db1e58e391b5e99cba1afc3556a925c2e975476ca36ca77b53b91a1
         containerID: docker://06bac07b7c7629100f57618252ce3f6e902037d3c0a998153f387ccf002eb578
-      }
-    ]
     qosClass: BestEffort
-}
