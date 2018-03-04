@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-- name: demoproject
+  name: demoproject
   namespace: demoproject_ns
 spec: 
   replicas: 1
