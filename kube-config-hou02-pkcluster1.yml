@@ -4,16 +4,12 @@ metadata:
   name: demoproject
   namespace: demoproject_ns
   clusterName: pkcluster1
-spec: 
-  replicas: 1
-  selector:
-    matchLabels:
-      run: demoproject
-  template:
-    spec:
-      containers:
-        name: demoproject
-        image: registry.ng.bluemix.net/demoproject_ns/demoproject
-        ports:
-          containerPort: 8080
-          hostPort: 8080
+spec:
+  containers:
+    name: demoproject
+    image: registry.ng.bluemix.net/demoproject_ns/demoproject
+    ports:
+      containerPort: 8080
+      hostPort: 8080
+    replicas: 1
+      
