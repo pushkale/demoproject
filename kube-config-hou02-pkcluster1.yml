@@ -23,3 +23,212 @@ users:
         id-token: eyJraWQiOiIyMDE3MTAzMC0wMDowMDowMCIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJJQk1pZC0wNjAwMDFFWFVSIiwiaXNzIjoiaHR0cHM6Ly9pYW0ubmcuYmx1ZW1peC5uZXQva3ViZXJuZXRlcyIsInN1YiI6InB1c2hrYWxlQGluLmlibS5jb20iLCJhdWQiOiJieCIsImV4cCI6MTUyMDE2MjExNywiaWF0IjoxNTIwMTU4NTE3fQ.ipBP1uyfqVvXlGJ2y8p9W-ETejQ4VNZI4nuZAtg4oMULQhzEr-Fk419XHevnaPnfEU4r23C8iB2ZPAhH-iWEJGqOn4_1z0ME4U09pevXEIwqp3KU7guMSCI8lucOO9Sq8jIlKaGc_JhJqx-7O3YYBXza840quMr1pB7wO2XqJbku8z7v31CUQbcGb1Rs1iazUlwlK97jMLHCURLcqa1m6uYYiYhcjxJ7ZVqSppvVJwJMc0ICGG_SRtTAAjWE0lQL_QU7919lwtPEREPNRxrzZXowy29Vl96KtHX3SI0l6B0FuH3HyskYfr-PFJp5sbM6GrI5Mzl4TW5PXFK6t2vhFw
         idp-issuer-url: https://iam.ng.bluemix.net/kubernetes
         refresh-token: J1C3zRoyqrCqTQ97PTXw1CztxpN0iMwy_ohVir4_CsxeHq4DUfipxnvWo6G3KJZXWaCMkR9ajRcmk-085hJ3H0blzRXOAof_KaalWFflR2uIm3JtCh5vRRS8SEeSRV8aSSOy0_bdgx8GnJA8kPOKEaKXYISkQjf356M_Qcf3EgeyDmuwRBNpRGp2iGhn2QySbRPD3vCf2aPqgL42Y1Rb4LxCIo3YnkSxOlGMpqCMnT5nNblPy2ojeB9npDUVtguk-D_F2chG4MFW_gjrieJNavsZgc5VYmw_8Xpr8Ew7cd-OrZCr6VZeBr6gw7fTeF78599RVmJ0-kb7LnjH0f-joEGXtKaXVP17yzt_i-saFadHtg9jruSzmb8CO3xbbE54Avv0cC19ANEayaEooBs9wSmT6wvzDldnk89-rN1js_88T4WhrqYZ7NqW9e4u83DKk2q6riE7hARvxlbSkHRyJD62E2wQU1CXUSfIPKFA1cYT3zjd772T0cnr17EzJkJ4Wz0oyUjErfoAIYFKdD0q9A5GR4gxOX21WAoXgiztHs0LdwqUsmV4-BJNjAB5FGN3Ec0=
+
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "demoproject",
+    "namespace": "default",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/demoproject",
+    "uid": "f80d08c1-1f98-11e8-8607-7e169d5cae9a",
+    "resourceVersion": "1567",
+    "generation": 1,
+    "creationTimestamp": "2018-03-04T10:44:09Z",
+    "labels": {
+      "run": "demoproject"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "run": "demoproject"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "run": "demoproject"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "demoproject",
+            "image": "registry.ng.bluemix.net/demoproject_ns/demoproject",
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "securityContext": {},
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": 1,
+        "maxSurge": 1
+      }
+    }
+  },
+  "status": {
+    "observedGeneration": 1,
+    "replicas": 1,
+    "updatedReplicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "conditions": [
+      {
+        "type": "Available",
+        "status": "True",
+        "lastUpdateTime": "2018-03-04T10:44:09Z",
+        "lastTransitionTime": "2018-03-04T10:44:09Z",
+        "reason": "MinimumReplicasAvailable",
+        "message": "Deployment has minimum availability."
+      }
+    ]
+  }
+}
+
+{
+  "kind": "Pod",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "demoproject-7fc59b8b54-78zn7",
+    "generateName": "demoproject-7fc59b8b54-",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/pods/demoproject-7fc59b8b54-78zn7",
+    "uid": "f80e8efa-1f98-11e8-8607-7e169d5cae9a",
+    "resourceVersion": "1565",
+    "creationTimestamp": "2018-03-04T10:44:09Z",
+    "labels": {
+      "pod-template-hash": "3971564610",
+      "run": "demoproject"
+    },
+    "ownerReferences": [
+      {
+        "apiVersion": "extensions/v1beta1",
+        "kind": "ReplicaSet",
+        "name": "demoproject-7fc59b8b54",
+        "uid": "f80ddb27-1f98-11e8-8607-7e169d5cae9a",
+        "controller": true,
+        "blockOwnerDeletion": true
+      }
+    ]
+  },
+  "spec": {
+    "volumes": [
+      {
+        "name": "default-token-gtph6",
+        "secret": {
+          "secretName": "default-token-gtph6",
+          "defaultMode": 420
+        }
+      }
+    ],
+    "containers": [
+      {
+        "name": "demoproject",
+        "image": "registry.ng.bluemix.net/demoproject_ns/demoproject",
+        "resources": {},
+        "volumeMounts": [
+          {
+            "name": "default-token-gtph6",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }
+        ],
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "imagePullPolicy": "Always"
+      }
+    ],
+    "restartPolicy": "Always",
+    "terminationGracePeriodSeconds": 30,
+    "dnsPolicy": "ClusterFirst",
+    "serviceAccountName": "default",
+    "serviceAccount": "default",
+    "nodeName": "10.47.64.15",
+    "securityContext": {},
+    "imagePullSecrets": [
+      {
+        "name": "bluemix-default-secret"
+      },
+      {
+        "name": "bluemix-default-secret-regional"
+      },
+      {
+        "name": "bluemix-default-secret-international"
+      }
+    ],
+    "schedulerName": "default-scheduler",
+    "tolerations": [
+      {
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      },
+      {
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      }
+    ]
+  },
+  "status": {
+    "phase": "Running",
+    "conditions": [
+      {
+        "type": "Initialized",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2018-03-04T10:44:09Z"
+      },
+      {
+        "type": "Ready",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2018-03-04T10:44:25Z"
+      },
+      {
+        "type": "PodScheduled",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2018-03-04T10:44:09Z"
+      }
+    ],
+    "hostIP": "10.47.64.15",
+    "podIP": "172.30.246.204",
+    "startTime": "2018-03-04T10:44:09Z",
+    "containerStatuses": [
+      {
+        "name": "demoproject",
+        "state": {
+          "running": {
+            "startedAt": "2018-03-04T10:44:25Z"
+          }
+        },
+        "lastState": {},
+        "ready": true,
+        "restartCount": 0,
+        "image": "registry.ng.bluemix.net/demoproject_ns/demoproject:latest",
+        "imageID": "docker-pullable://registry.ng.bluemix.net/demoproject_ns/demoproject@sha256:44dc0bd28db1e58e391b5e99cba1afc3556a925c2e975476ca36ca77b53b91a1",
+        "containerID": "docker://06bac07b7c7629100f57618252ce3f6e902037d3c0a998153f387ccf002eb578"
+      }
+    ],
+    "qosClass": "BestEffort"
+  }
+}
