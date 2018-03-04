@@ -24,6 +24,7 @@ users:
         idp-issuer-url: https://iam.ng.bluemix.net/kubernetes
         refresh-token: J1C3zRoyqrCqTQ97PTXw1CztxpN0iMwy_ohVir4_CsxeHq4DUfipxnvWo6G3KJZXWaCMkR9ajRcmk-085hJ3H0blzRXOAof_KaalWFflR2uIm3JtCh5vRRS8SEeSRV8aSSOy0_bdgx8GnJA8kPOKEaKXYISkQjf356M_Qcf3EgeyDmuwRBNpRGp2iGhn2QySbRPD3vCf2aPqgL42Y1Rb4LxCIo3YnkSxOlGMpqCMnT5nNblPy2ojeB9npDUVtguk-D_F2chG4MFW_gjrieJNavsZgc5VYmw_8Xpr8Ew7cd-OrZCr6VZeBr6gw7fTeF78599RVmJ0-kb7LnjH0f-joEGXtKaXVP17yzt_i-saFadHtg9jruSzmb8CO3xbbE54Avv0cC19ANEayaEooBs9wSmT6wvzDldnk89-rN1js_88T4WhrqYZ7NqW9e4u83DKk2q6riE7hARvxlbSkHRyJD62E2wQU1CXUSfIPKFA1cYT3zjd772T0cnr17EzJkJ4Wz0oyUjErfoAIYFKdD0q9A5GR4gxOX21WAoXgiztHs0LdwqUsmV4-BJNjAB5FGN3Ec0=
 
+
 ------------
 apiVersion: extensions/v1beta1
 kind: Deployment
