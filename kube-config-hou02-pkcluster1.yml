@@ -31,7 +31,7 @@ metadata:
   name: demoproject
   namespace: default
   clusterName: pkcluster1
-  selfLink: /apis/extensions/v1beta1/default/default/deployments/demoproject
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/demoproject
   uid: f80d08c1-1f98-11e8-8607-7e169d5cae9a
 spec:
   containers:
@@ -41,5 +41,6 @@ spec:
       containerPort: 8080
       hostPort: 8080
     replicas: 1
+  dnsPolicy: ClusterFirst
 
       
