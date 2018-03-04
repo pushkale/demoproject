@@ -31,6 +31,8 @@ metadata:
   name: demoproject
   namespace: demoproject_ns
   clusterName: pkcluster1
+  selfLink: /apis/extensions/v1beta1/demoproject_ns/default/deployments/demoproject
+  uid: f80d08c1-1f98-11e8-8607-7e169d5cae9a
 spec:
   containers:
     name: demoproject
