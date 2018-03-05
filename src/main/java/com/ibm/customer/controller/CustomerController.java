@@ -52,6 +52,6 @@ public class CustomerController  {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE) 
     public void delete(@PathVariable String id) {
     	customerRepository.delete(id); 
-    
+  
 	}
 }
