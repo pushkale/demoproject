@@ -42,6 +42,5 @@ spec:
       containerPort: 8080
       hostPort: 8080
     replicas: 1
-  dnsPolicy: ClusterFirst
 
       
