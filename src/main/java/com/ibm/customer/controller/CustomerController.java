@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiOperation;
 @Api("customer")
 @RequestMapping("/api/customer")
 public class CustomerController  {
-	
+
 
 	/*@RequestMapping(method = RequestMethod.GET, value = "/api/getCustomer")
 	public String getCustomer() {
