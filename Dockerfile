@@ -1,5 +1,5 @@
 FROM java:8-jre
-ENV PROJECT_HOME /var/lib/jenkins/workspace/demopipeline1
+ENV PROJECT_HOME /var/lib/jenkins/jobs/demopipeline1/workspace
 WORKDIR $PROJECT_HOME
 ADD ./build/libs/demoproject.jar $PROJECT_HOME/demoproject.jar
 ADD ./src/main/resources/application.properties $PROJECT_HOME/application.properties
