@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiOperation;
 public class CustomerController  {
 
 
+
 	/*@RequestMapping(method = RequestMethod.GET, value = "/api/getCustomer")
 	public String getCustomer() {
 		return "Swagger Hello World";
