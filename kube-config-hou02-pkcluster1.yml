@@ -1,0 +1,26 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: ca-hou02-pkcluster1.pem
+    server: https://184.173.44.62:24744
+  name: pkcluster1
+contexts:
+- context:
+    cluster: pkcluster1
+    namespace: default
+    user: pushkale@in.ibm.com
+  name: pkcluster1
+current-context: pkcluster1
+kind: Config
+preferences: {}
+users:
+- name: pushkale@in.ibm.com
+  user:
+    auth-provider:
+      config:
+        client-id: bx
+        client-secret: bx
+        id-token: eyJraWQiOiIyMDE3MTAzMC0wMDowMDowMCIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJJQk1pZC0wNjAwMDFFWFVSIiwiaXNzIjoiaHR0cHM6Ly9pYW0ubmcuYmx1ZW1peC5uZXQva3ViZXJuZXRlcyIsInN1YiI6InB1c2hrYWxlQGluLmlibS5jb20iLCJhdWQiOiJieCIsImV4cCI6MTUyMDY4Njk3OSwiaWF0IjoxNTIwNjgzMzc5fQ.UPdBNsf5QmwEAssLVI1TffES6tdx1LsRCvagg3mY6YHu4wI3ogtpGExqUu5I767NYDTN88OYJUDQuULeixshPZvEZloxRC3M4pCy_bXAvsFMlM3obc0LPbQvw3Aqo8wrhGnKSxm4nFi_tPgAlY-2Ln8TTF4iEJ6lufhMy7CkN4NeLjCMH5UY6wSFXJJk_oXqH7vAQC6tgm5RxPrJzdLI2poai1zidFV8BhEN3lACGn02Xs4_jrF7cSVmtTKOAQElzi9g2SWeQ0lvDDNFpVlU8NxowxoazDGwfi0QX1-vvCpI07ox0nEAE7AF85jmOHll3uatdsxjwQxqe4nK2NgVAw
+        idp-issuer-url: https://iam.ng.bluemix.net/kubernetes
+        refresh-token: J1CWdKHmicZJk8vv_bFCweLd8np0vJ02yOK_n3EcBNJl36pc5R6nEAdZ7CoWktUEIvbnGT-Ol-Uu1RjeE-dbA1zjjP1_0AMKoUxa7cY2nJPWV56a3GLTda7DwihjiSDphhzIOS582yDLjEPEuWhv-MCC6ubJJPy9L_v-AOeUtjTtyrJ9luCdIcqWp2txlXCKdhJOmuT510ea4p7p0_f1hz6gXFh2Vtsga98CoYpbj9_ZqV-9T_N8QLT9Bs0P2G6PaI8xMYvL6JSbhaox67a-u3e2Q5uN5SVrGQWJLO5LnDePA0dQAUVByucp0aee-SxoDWhPFWwFHF3uqhBE82lXDtU_KDid8UtLQke_PP-GyaoelIa3cK2naq8JmHdFChIQHJm-MyxN8NCqILFr_ZmvH00n9rEQ_G3NaL525xVXlNd2jde8WaFWaFxdXK-pDGqBmv4khYc7pTybYz3axcKeyNDjX-Pvx9c0t7iC_OURhZNyDBnNhO_6-UpD3yWwgjQswxMzBffbxpjXTRQfZcTHdy9CWpuk_UCbBG7ZB957XCI4LunZjVvZljbU7HY-MjcfzN4=
+      name: oidc
