@@ -10,7 +10,7 @@ public class HealthCheck implements HealthIndicator {
     public Health health() {
         return new Health.Builder()
             .up()
-            .withDetail("MyStatus : ", "is Up and Running")
+            .withDetail("MyStatus : ", "Iam Up and Running")
             .build();
     }
 }
