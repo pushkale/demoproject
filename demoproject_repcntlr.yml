@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: demoprjcontroller
+spec:
+  replicas: 2
+  selector:
+    app: demoproject
+  template:
+    metadata:
+      name: demoproject
+      labels:
+        app: demoproject
+    spec:
+      containers:
+      - name: demoproject
+        image: pushkale/demoproject:1
+        ports:
+        - containerPort: 80
