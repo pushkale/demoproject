@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: demoproject
-        image: pushkale/demoproject:1
+        image: docker.io/pushkale/demoproject:1
         resources:
           requests:
             cpu: "100m"
