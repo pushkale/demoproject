@@ -30,34 +30,10 @@ public class CustomerControllerTest {
 	@MockBean
 	private CustomerController custController;
 
-	//CustomerModel custModel = new CustomerModel("", "", "", "");
-	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10 Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
-
+	
 	@Test
 	public void read() throws Exception {
 		CustomerModel mockCustomer = new CustomerModel(45, "Mock FName",  "103", "Mock FName");
-		
-		Mockito.when(
-				custController.read("101")).thenReturn(mockCustomer);
-
-        //SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock);
-
-        //int result = businessImpl.findTheGreatestFromAllData();
-
-        //assertEquals(24, result);
-		/*RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-				"/students/Student1/courses/Course1").accept(
-				MediaType.APPLICATION_JSON);
-
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-
-		System.out.println(result.getResponse());
-		String expected = "{id:Course1,name:Spring,description:10 Steps}";
-
-		// {"id":"Course1","name":"Spring","description":"10 Steps, 25 Examples and 10K Students","steps":["Learn Maven","Import Project","First Example","Second Example"]}
-
-		JSONAssert.assertEquals(expected, result.getResponse()
-				.getContentAsString(), false);*/
+		Mockito.when(custController.read("101")).thenReturn(mockCustomer);
 	}
-
 }
