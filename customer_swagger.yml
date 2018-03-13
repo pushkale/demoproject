@@ -1,0 +1,276 @@
+swagger: '2.0'
+info:
+  description: Customer API reference for developers
+  version: '1.0'
+  title: Customer API
+  termsOfService: http://testurl.com
+  license:
+    url: testemail@gmail.com
+host: localhost:8080
+basePath: /
+tags:
+- name: customer-controller
+  description: Customer Controller
+paths:
+  /api/customer:
+    post:
+      tags:
+      - customer-controller
+      summary: Add new customer
+      operationId: createUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - in: body
+        name: customer
+        description: customer
+        required: true
+        schema:
+          $ref: '#/definitions/CustomerModel'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - customer-controller
+      summary: Update a customer
+      operationId: updateUsingPUT
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - in: body
+        name: customer
+        description: customer
+        required: true
+        schema:
+          $ref: '#/definitions/CustomerModel'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/customer/{id}:
+    get:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingGET
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    head:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingHEAD
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '401':
+          description: Unauthorized
+        '204':
+          description: No Content
+        '403':
+          description: Forbidden
+    post:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingPUT
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingDELETE
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '401':
+          description: Unauthorized
+        '204':
+          description: No Content
+        '403':
+          description: Forbidden
+    options:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingOPTIONS
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '401':
+          description: Unauthorized
+        '204':
+          description: No Content
+        '403':
+          description: Forbidden
+    patch:
+      tags:
+      - customer-controller
+      summary: Read a customer
+      operationId: readUsingPATCH
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerModel'
+        '401':
+          description: Unauthorized
+        '204':
+          description: No Content
+        '403':
+          description: Forbidden
+definitions:
+  CustomerModel:
+    type: object
+    required:
+    - firstName
+    - id
+    properties:
+      age:
+        type: integer
+        format: int32
+        description: Age of customer
+      firstName:
+        type: string
+        description: First Name of customer
+      id:
+        type: string
+        description: Id of customer
+      lastName:
+        type: string
+        description: Last Name of customer

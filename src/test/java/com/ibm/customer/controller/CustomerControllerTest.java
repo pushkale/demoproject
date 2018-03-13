@@ -31,7 +31,6 @@ public class CustomerControllerTest {
 	private CustomerController custController;
 
 	//CustomerModel custModel = new CustomerModel("", "", "", "");
-
 	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10 Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
 
 	@Test

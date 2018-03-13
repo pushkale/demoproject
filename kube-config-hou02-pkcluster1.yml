@@ -1,26 +1,25 @@
 apiVersion: v1
 clusters:
-- cluster:
+- name: pkcluster1
+  cluster:
     certificate-authority: ca-hou02-pkcluster1.pem
     server: https://184.173.44.62:24744
-  name: pkcluster1
 contexts:
-- context:
+- name: pkcluster1
+  context:
     cluster: pkcluster1
-    namespace: default
     user: pushkale@in.ibm.com
-  name: pkcluster1
+    namespace: default
 current-context: pkcluster1
 kind: Config
-preferences: {}
 users:
 - name: pushkale@in.ibm.com
   user:
     auth-provider:
+      name: oidc
       config:
         client-id: bx
         client-secret: bx
-        id-token: eyJraWQiOiIyMDE3MTAzMC0wMDowMDowMCIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJJQk1pZC0wNjAwMDFFWFVSIiwiaXNzIjoiaHR0cHM6Ly9pYW0ubmcuYmx1ZW1peC5uZXQva3ViZXJuZXRlcyIsInN1YiI6InB1c2hrYWxlQGluLmlibS5jb20iLCJhdWQiOiJieCIsImV4cCI6MTUyMDY4Njk3OSwiaWF0IjoxNTIwNjgzMzc5fQ.UPdBNsf5QmwEAssLVI1TffES6tdx1LsRCvagg3mY6YHu4wI3ogtpGExqUu5I767NYDTN88OYJUDQuULeixshPZvEZloxRC3M4pCy_bXAvsFMlM3obc0LPbQvw3Aqo8wrhGnKSxm4nFi_tPgAlY-2Ln8TTF4iEJ6lufhMy7CkN4NeLjCMH5UY6wSFXJJk_oXqH7vAQC6tgm5RxPrJzdLI2poai1zidFV8BhEN3lACGn02Xs4_jrF7cSVmtTKOAQElzi9g2SWeQ0lvDDNFpVlU8NxowxoazDGwfi0QX1-vvCpI07ox0nEAE7AF85jmOHll3uatdsxjwQxqe4nK2NgVAw
+        id-token: eyJraWQiOiIyMDE3MTAzMC0wMDowMDowMCIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJJQk1pZC0wNjAwMDFFWFVSIiwiaXNzIjoiaHR0cHM6Ly9pYW0ubmcuYmx1ZW1peC5uZXQva3ViZXJuZXRlcyIsInN1YiI6InB1c2hrYWxlQGluLmlibS5jb20iLCJhdWQiOiJieCIsImV4cCI6MTUyMDc5ODQ3NCwiaWF0IjoxNTIwNzk0ODc0fQ.PMEUVkq-w-o9Pup7oNvGH6tqHt6SP-O6zjxRR3dTx-kmIP3aqsupelyuqOQPYL7QaZZoZT0u5uyO1_zqzzAgf4OUrf5AvppkYsbvSzgENiUuFxVktbpGpnRIZtgh_p9x3DTGxqT30bVW7XDUb3RXwzy9U6V1fsBa7wDPKQyAssQDhulpjaRQjijCLJglaWWv1Z2nF5RHFRzcWILtzS9Q6348h6x2Pv28OC2L0YZWRw8edVcgMvP2TXasRaOMT-vMr5a1gtuCbj6pHMRVd0wVWxkI4mCqzkTjO9AqxTT90lmQOS7W_DL_Ez_pGqI7N8B_gm9uNijc4EbN4IvUl2oSwA
         idp-issuer-url: https://iam.ng.bluemix.net/kubernetes
-        refresh-token: J1CWdKHmicZJk8vv_bFCweLd8np0vJ02yOK_n3EcBNJl36pc5R6nEAdZ7CoWktUEIvbnGT-Ol-Uu1RjeE-dbA1zjjP1_0AMKoUxa7cY2nJPWV56a3GLTda7DwihjiSDphhzIOS582yDLjEPEuWhv-MCC6ubJJPy9L_v-AOeUtjTtyrJ9luCdIcqWp2txlXCKdhJOmuT510ea4p7p0_f1hz6gXFh2Vtsga98CoYpbj9_ZqV-9T_N8QLT9Bs0P2G6PaI8xMYvL6JSbhaox67a-u3e2Q5uN5SVrGQWJLO5LnDePA0dQAUVByucp0aee-SxoDWhPFWwFHF3uqhBE82lXDtU_KDid8UtLQke_PP-GyaoelIa3cK2naq8JmHdFChIQHJm-MyxN8NCqILFr_ZmvH00n9rEQ_G3NaL525xVXlNd2jde8WaFWaFxdXK-pDGqBmv4khYc7pTybYz3axcKeyNDjX-Pvx9c0t7iC_OURhZNyDBnNhO_6-UpD3yWwgjQswxMzBffbxpjXTRQfZcTHdy9CWpuk_UCbBG7ZB957XCI4LunZjVvZljbU7HY-MjcfzN4=
-      name: oidc
+        refresh-token: J1DXXE4pu4ymn00CAHwIEUnTVx56Lm3qnqicJpHFr_8y57aic0hlVGjO82BQY7Etx8DEjFzabj8Do6y0kE2uI1JwZFjq8uzHMo4IVBVlwi1rzMRLwneAVPGt7VmAS_tIobqhP-yHQ7gtbhV5AssdJmhXWttc9xmCuXFauAVCK8Rb86po4Qla_aaykqZn4c_qVUoY25z85vTVBJbUJya3JGw2PS9Lc74IFB1ySISXMnpGWi5V47cJQ1aiAF9e5ynLqFzW-pVmK5B70zdqbNmEtCLbQiFkFy1YO3eqdkWjvJqsDqqJm9xqKmH09R_Sy1sZtioZotO1zrVcmtX5Pqzr_sUGHF0qF9w_qthD4pQg-SdWhfmPNPSmieBNTXmooZJXnvz4T-kOpYQOptYwqX1IFy5_NK9sBWdaE_z0iiVRLSw5UY-ieDz612O9vt3xTkrGCPF9eZgEyHlydE7UWhgFxd7zu5JOCrUGz9ucuUB-5fsm_0oO3Seod6mZhrv43sBKzoRHGKZgKPWDPE83hhuI25RyzJA4IAqCJMfLsGm6BZXari1QtDaj66-34xLfzKA_-6g=
